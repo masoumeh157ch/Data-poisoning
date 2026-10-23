@@ -92,22 +92,22 @@ This section contains experimental RAG pipelines developed using different retri
 
 - `rag.py`: Implements a simple retrieval-and-generation workflow using text matching against a knowledge base.
 - `chatbot.py`: Provides a command-line interface for interacting with the basic RAG prototype.
-- `import requests.py`: Implements a text-based RAG chatbot using Hugging Face embeddings, FAISS, and the Groq API.
+- `groq_rag_cli.py`: Implements a text-based RAG chatbot using Hugging Face embeddings, FAISS, and the Groq API.
 
 **RAG Applications**
 
-- `final.py`: Develops a multilingual RAG chatbot supporting English and Persian queries using language detection, vector retrieval, and Streamlit.
-- `f1.py`: Implements a multilingual RAG application that loads knowledge from a JSON dataset containing an `adv_texts` field, retrieves relevant documents through FAISS, and generates responses using LLaMA through Groq.
-- `final_proj.py`: Implements a local RAG application using Ollama, FAISS, text chunking, and a Chainlit interface.
+- `multilingual_rag.py`: Develops a multilingual RAG chatbot supporting English and Persian queries using language detection, vector retrieval, and Streamlit.
+- `adversarial_text_rag.py`: Implements a multilingual RAG application that loads knowledge from a JSON dataset containing an `adv_texts` field, retrieves relevant documents through FAISS, and generates responses using LLaMA through Groq.
+- `local_rag_chainlit.py`: Implements a local RAG application using Ollama, FAISS, text chunking, and a Chainlit interface.
 - `groq_query.py`: Contains utilities for interacting with Groq-hosted language models and handling API-related errors.
 
 **RAG Evaluation**
 
-- `benchmarking_rag(1).ipynb`: Explores RAG benchmarking workflows, including question generation, response evaluation, and LLM-based assessment.
+- `benchmarking_rag.ipynb`: Explores RAG benchmarking workflows, including question generation, response evaluation, and LLM-based assessment.
 
 **Knowledge Corruption Observations**
 
-- `1.docx`: Contains recorded examples comparing LLM responses under different knowledge modification scenarios.
+- `knowledge_corruption_observations.docx`: Contains recorded examples comparing LLM responses under different knowledge modification scenarios.
 
 The RAG implementations represent different development experiments rather than a single fully integrated application.
 
