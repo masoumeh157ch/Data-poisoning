@@ -1,0 +1,43 @@
+Here is a list of common data poisoning attacks that can be used to poison data and impact the performance of linear regression models:
+
+### 1. **Label Flipping Attack**
+   - **Description**: This attack flips or mislabels a portion of the target values (`y`). For example, positive labels might be flipped to negative (or vice versa) in a binary classification setting. For regression, values could be changed to values far from the expected range.
+   - **Impact**: Misleads the model into learning a biased or inverted relationship between `x` and `y`.
+
+### 2. **Outlier Injection Attack**
+   - **Description**: Injects data points with extreme values (outliers) that don’t follow the underlying distribution of the original data. These outliers may be far from the regression line, either in `x`, `y`, or both.
+   - **Impact**: Causes the regression line to be skewed toward the outliers, degrading the accuracy of the model.
+
+### 3. **Feature Noise Injection**
+   - **Description**: Adds random noise to the feature values (`x`). This noise can be uniform, Gaussian, or another distribution, increasing the randomness and inconsistency in the data.
+   - **Impact**: Makes it more difficult for the model to identify the true linear relationship between `x` and `y`.
+
+### 4. **Target Noise Injection**
+   - **Description**: Adds noise specifically to the target values (`y`). This can involve adding random values to `y` based on a chosen distribution.
+   - **Impact**: Disrupts the model’s ability to accurately predict `y`, as the target values are now noisy and potentially inconsistent with the features.
+
+### 5. **Random Sample Attack**
+   - **Description**: Introduces random data points that don’t follow the true distribution of the data, where both `x` and `y` values are randomized. These points do not follow the true underlying relationship and are meant to "confuse" the model.
+   - **Impact**: Forces the model to "overfit" on random data points that do not follow the true pattern, decreasing model accuracy.
+
+### 6. **Gradient-Based Poisoning**
+   - **Description**: Creates poisoned data points specifically designed to alter the gradient of the loss function during training. This is a more advanced and targeted poisoning attack that typically requires iterative optimization.
+   - **Impact**: Adjusts the loss landscape so that the model converges to a less optimal solution, reducing the accuracy and robustness of the model.
+
+### 7. **Data Scaling Attack**
+   - **Description**: Scales either the feature values (`x`) or target values (`y`) of certain data points by a large factor. For example, multiplying some values by a large constant.
+   - **Impact**: Skews the learned regression line, especially if some points are scaled significantly higher or lower than others.
+
+### 8. **Backdoor Attack**
+   - **Description**: Introduces specific patterns in the data (such as a distinct subset of values or a pattern in `x`) that are associated with incorrect target values (`y`). The poisoned points are often difficult to detect as they appear like "normal" data.
+   - **Impact**: The model learns to associate specific input patterns with incorrect outputs, reducing its general accuracy and potentially creating vulnerabilities.
+
+### 9. **Feature Addition Attack**
+   - **Description**: Adds artificial features or changes existing features in a way that the model associates unrelated information with the target. This can involve adding columns with noisy or adversarially crafted values.
+   - **Impact**: Distracts the model from focusing on the true features, causing it to learn incorrect relationships and reducing the effectiveness of the trained model.
+
+### 10. **Anchor Point Attack**
+   - **Description**: Adds data points that lie close to the boundary between training data and poisoned data in feature space. These points are carefully selected so that they cause the model to "anchor" to these boundaries.
+   - **Impact**: Shifts the model parameters in a way that biases predictions, particularly near certain thresholds or data regions.
+
+Each of these poisoning attacks can reduce the accuracy and robustness of linear regression models by misleading them or making them more sensitive to adversarially introduced patterns. For defending against these attacks, it’s helpful to incorporate robust statistical techniques, anomaly detection, or defensive strategies like outlier removal.
